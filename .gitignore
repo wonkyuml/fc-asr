@@ -120,3 +120,4 @@ ENV/
 # Generated Files
 exp/
 corpus/
+*.model
