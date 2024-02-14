@@ -50,7 +50,7 @@ def run_train(args):
     sp_model = spm.SentencePieceProcessor(model_file=str(args.sp_model_path))
     model = ConformerRNNTModule(sp_model)
     data_module = get_data_module(str(args.librispeech_path), str(args.global_stats_path), str(args.sp_model_path))
-    trainer.fit(model, data_module, ckpt_path='/home/wonkyum/fc-asr/exp/checkpoints/epoch=4-step=71355-v1.ckpt')
+    trainer.fit(model, data_module, ckpt_path=args.checkpoint_path)
 
 
 def cli_main():
