@@ -133,9 +133,9 @@ class LibriSpeechDataModule(LightningDataModule):
 
     def train_dataloader(self):
         datasets = [
-#            self.librispeech_cls(self.librispeech_path, url="train-clean-360"),
+            self.librispeech_cls(self.librispeech_path, url="train-clean-360"),
             self.librispeech_cls(self.librispeech_path, url="train-clean-100"),
-#            self.librispeech_cls(self.librispeech_path, url="train-other-500"),
+            self.librispeech_cls(self.librispeech_path, url="train-other-500"),
         ]
 
         if not self.train_dataset_lengths:

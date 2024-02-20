@@ -122,7 +122,7 @@ class ConformerRNNTModule(LightningModule):
 
     def forward(self, batch: Batch):
         decoder = RNNTBeamSearch(self.model, self.blank_idx)
-        hypotheses = decoder(batch.features.to(self.device), batch.feature_lengths.to(self.device), 20)
+        hypotheses = decoder(batch.features.to(self.device), batch.feature_lengths.to(self.device), 5)
         return post_process_hypos(hypotheses, self.sp_model)[0][0]
 
     def training_step(self, batch: Batch, batch_idx):
